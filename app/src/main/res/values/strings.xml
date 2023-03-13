@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Contacts</string>
+    <string name="action_search">Search</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="contacts_fragment_label">Contacts</string>
+    <string name="add_contact_fragment_label">Add Contact</string>
+    <string name="contact_details_fragment_label">Details</string>
+
+    <string name="full_name">%1$s %2$s</string>
+
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ContactsFragment">
+
+    <fragment
+        android:id="@+id/ContactsFragment"
+        android:name="com.khmaies.mycontacts.ContactsFragment"
+        android:label="@string/contacts_fragment_label"
+        tools:layout="@layout/fragment_contacts">
+
+        <action
+            android:id="@+id/action_ContactsFragment_to_AddContactFragment"
+            app:destination="@id/AddContactFragment" />
+        <action
+            android:id="@+id/action_ContactsFragment_to_contactDetailFragment"
+            app:destination="@id/contactDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AddContactFragment"
+        android:name="com.khmaies.mycontacts.AddContactFragment"
+        android:label="@string/add_contact_fragment_label"
+        tools:layout="@layout/fragment_add_contact">
+
+        <action
+            android:id="@+id/action_AddContactFragment_to_ContactsFragment"
+            app:destination="@id/ContactsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactDetailFragment"
+        android:name="com.khmaies.mycontacts.ContactDetailFragment"
+        android:label="@string/contact_details_fragment_label"
+        tools:layout="@layout/fragment_contact_detail" >
+        <argument
+            android:name="contact"
+            app:argType="com.khmaies.mycontacts.model.Contact" />
+    </fragment>
+</navigation>
