@@ -1,7 +1,6 @@
 package com.khmaies.mycontacts
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
@@ -54,10 +53,7 @@ class ContactsFragment : Fragment(), ContactAdapter.OnItemClickListener,
         }
         val itemTouchHelper = ItemTouchHelper(object : SwipeHelper(binding.contactsRecyclerview) {
             override fun instantiateUnderlayButton(position: Int): List<UnderlayButton> {
-                val deleteButton = deleteButton(position)
-                val editButton = editButton(position)
-
-                return listOf(deleteButton, editButton)
+                return listOf(deleteButton(position))
             }
         })
         itemTouchHelper.attachToRecyclerView(binding.contactsRecyclerview)
@@ -65,19 +61,6 @@ class ContactsFragment : Fragment(), ContactAdapter.OnItemClickListener,
         return binding.root
     }
 
-    private fun editButton(position: Int): SwipeHelper.UnderlayButton {
-        return SwipeHelper.UnderlayButton(
-            requireContext(),
-            "Edit",
-            14.0f,
-            R.color.home_color_green,
-            object : SwipeHelper.UnderlayButtonClickListener {
-                override fun onClick() {
-                    Log.e("monster", "edit clicked $position")
-                }
-            }
-        )
-    }
 
     private fun deleteButton(position: Int): SwipeHelper.UnderlayButton {
         return SwipeHelper.UnderlayButton(
